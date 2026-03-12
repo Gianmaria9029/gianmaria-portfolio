@@ -9,7 +9,7 @@ E-commerce dedicato a prodotti ispirati al motorsport.
 
 https://www.circuitidacorsa.it
 
-### G-Form
+### GForm
 Piattaforma di formazione su AI, strumenti digitali e produttività.
 
 https://gform.it/
