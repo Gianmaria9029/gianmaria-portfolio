@@ -2,6 +2,9 @@
 
 Portfolio personale con i miei principali progetti web e professionali.
 
+🌐 Link GitHub 
+https://gianmaria9029.github.io/gianmaria-portfolio/
+
 ## Progetti
 
 ### CircuitiDaCorsa
