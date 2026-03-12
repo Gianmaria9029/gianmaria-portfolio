@@ -12,7 +12,7 @@ https://www.circuitidacorsa.it
 ### G-Form
 Piattaforma di formazione su AI, strumenti digitali e produttività.
 
-https://www.g-form.it
+https://gform.it/
 
 ### Curriculum
 Versione HTML del mio curriculum professionale.
