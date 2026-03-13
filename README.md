@@ -1,4 +1,4 @@
-# Gianmaria Gori — Portfolio
+# Gianmaria Gori - Portfolio
 
 ![Deployed](https://img.shields.io/badge/deployed-GitHub%20Pages-0a0a0a?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
@@ -15,17 +15,17 @@ Docente di Informatica · Web Designer · E-commerce Specialist.
 
 ## Progetti
 
-### 01 — CircuitiDaCorsa.it
+### 01 - CircuitiDaCorsa.it
 E-commerce dedicato a prodotti ispirati al mondo del motorsport.
 Dalla strategia di prodotto alla presentazione digitale, fino all'esperienza d'acquisto.
 🔗 [circuitidacorsa.it](https://www.circuitidacorsa.it)
 
-### 02 — GForm.it
+### 02 - GForm.it
 Piattaforma formativa con corsi pratici su intelligenza artificiale, strumenti digitali e produttività.
 Contenuti progettati per chi vuole risultati concreti.
 🔗 [gform.it](https://gform.it/)
 
-### 03 — Curriculum Vitae
+### 03 - Curriculum Vitae
 Versione HTML del curriculum professionale, consultabile online.
 🔗 [goribackup.it/CV](https://www.goribackup.it/CV/index.html)
 
