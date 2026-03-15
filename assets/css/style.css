@@ -284,7 +284,7 @@ strong { font-weight: 700; color: var(--text); }
   transition: opacity .6s ease, transform .6s ease;
 }
 .hero-name {
-  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-size: clamp(2rem, 9.5vw, 8rem);
   font-weight: 800;
   line-height: .95;
   color: var(--text);
@@ -292,6 +292,10 @@ strong { font-weight: 700; color: var(--text); }
   opacity: 0;
   transform: translateY(30px);
   transition: opacity .7s .1s ease, transform .7s .1s ease;
+  /* Garantisce che non esca mai dal container */
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 .hero-name em {
   display: block;
@@ -824,7 +828,7 @@ strong { font-weight: 700; color: var(--text); }
   .section   { padding: 5rem 0; }
 
   /* HERO */
-  .hero-name { font-size: clamp(2.6rem, 13vw, 4rem); }
+  .hero-name { font-size: clamp(1.8rem, 9vw, 4rem); }
   .hero-intro { font-size: 1rem; }
   .hero-actions {
     flex-direction: column;
@@ -880,7 +884,7 @@ strong { font-weight: 700; color: var(--text); }
 
   /* Hero name senza stroke su schermi minuscoli */
   .hero-name {
-    font-size: clamp(2.2rem, 12vw, 3rem);
+    font-size: clamp(1.6rem, 8.5vw, 2.8rem);
   }
   .hero-name em {
     -webkit-text-stroke: 1px var(--lime);
