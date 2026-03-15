@@ -272,6 +272,7 @@ strong { font-weight: 700; color: var(--text); }
   max-width: 900px;
   margin: 0 auto;
   width: 100%;
+  min-width: 0;
 }
 .hero-tag {
   font-size: .75rem;
@@ -801,7 +802,7 @@ strong { font-weight: 700; color: var(--text); }
   }
 
   /* HERO NAME — rimpicciolisce su tablet */
-  .hero-name { font-size: clamp(3rem, 14vw, 5rem); }
+  .hero-name { font-size: 12vw; }
 
   /* Spegni stroke su mobile piccolo per leggibilità */
   .hero-name em {
@@ -828,7 +829,7 @@ strong { font-weight: 700; color: var(--text); }
   .section   { padding: 5rem 0; }
 
   /* HERO */
-  .hero-name { font-size: clamp(1.8rem, 9vw, 4rem); }
+  .hero-name { font-size: 11vw; }
   .hero-intro { font-size: 1rem; }
   .hero-actions {
     flex-direction: column;
@@ -884,7 +885,7 @@ strong { font-weight: 700; color: var(--text); }
 
   /* Hero name senza stroke su schermi minuscoli */
   .hero-name {
-    font-size: clamp(1.6rem, 8.5vw, 2.8rem);
+    font-size: 10vw;
   }
   .hero-name em {
     -webkit-text-stroke: 1px var(--lime);
