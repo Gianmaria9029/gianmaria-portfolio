@@ -799,7 +799,7 @@ strong { font-weight: 700; color: var(--text); }
   }
 
   /* HERO NAME — rimpicciolisce su tablet */
-  .hero-name { font-size: 12vw; }
+  .hero-name { font-size: 8vw; }
 
   /* Spegni stroke su mobile piccolo per leggibilità */
   .hero-name em {
@@ -826,7 +826,7 @@ strong { font-weight: 700; color: var(--text); }
   .section   { padding: 5rem 0; }
 
   /* HERO */
-  .hero-name { font-size: 11vw; }
+  .hero-name { font-size: 7vw; }
   .hero-intro { font-size: 1rem; }
   .hero-actions {
     flex-direction: column;
@@ -881,9 +881,7 @@ strong { font-weight: 700; color: var(--text); }
   .nav-inner { padding: 0 1rem; }
 
   /* Hero name senza stroke su schermi minuscoli */
-  .hero-name {
-    font-size: 10vw;
-  }
+  .hero-name { font-size: 6.5vw; }
   .hero-name em {
     -webkit-text-stroke: 1px var(--lime);
   }
