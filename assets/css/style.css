@@ -293,10 +293,7 @@ strong { font-weight: 700; color: var(--text); }
   opacity: 0;
   transform: translateY(30px);
   transition: opacity .7s .1s ease, transform .7s .1s ease;
-  /* Garantisce che non esca mai dal container */
   width: 100%;
-  overflow-wrap: break-word;
-  word-break: break-word;
 }
 .hero-name em {
   display: block;
