@@ -235,7 +235,7 @@ strong { font-weight: 700; color: var(--text); }
   justify-content: center;
   position: relative;
   padding: 8rem 2rem 4rem;
-  overflow: hidden;
+  overflow-x: hidden; /* era overflow:hidden — clippava lo stroke verticalmente */
 }
 .hero-bg-noise {
   position: absolute;
@@ -298,6 +298,9 @@ strong { font-weight: 700; color: var(--text); }
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px var(--lime);
   color: transparent;
+  /* Evita che lo stroke venga clippato dall'overflow:hidden del parent */
+  padding: 0 .1em;
+  margin: 0 -.1em;
 }
 .hero-roles {
   display: flex;
