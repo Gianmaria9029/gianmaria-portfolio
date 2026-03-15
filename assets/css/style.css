@@ -31,7 +31,7 @@ body {
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: none; /* custom cursor enabled via JS */
+  cursor: none;
 }
 
 /* ---- CUSTOM CURSOR ---- */
@@ -181,6 +181,9 @@ strong { font-weight: 700; color: var(--text); }
   color: var(--text);
   text-decoration: none;
   letter-spacing: -.02em;
+  /* FIX: garantisce che il logo stia sopra tutto tranne il menu aperto */
+  position: relative;
+  z-index: 102;
 }
 .nav-logo .dot { color: var(--lime); }
 .nav-links {
@@ -234,7 +237,6 @@ strong { font-weight: 700; color: var(--text); }
   padding: 8rem 2rem 4rem;
   overflow: hidden;
 }
-/* grain texture */
 .hero-bg-noise {
   position: absolute;
   inset: 0;
@@ -243,7 +245,6 @@ strong { font-weight: 700; color: var(--text); }
   pointer-events: none;
   z-index: 0;
 }
-/* subtle grid */
 .hero-grid-overlay {
   position: absolute;
   inset: 0;
@@ -254,7 +255,6 @@ strong { font-weight: 700; color: var(--text); }
   pointer-events: none;
   z-index: 0;
 }
-/* lime radial glow */
 .hero::before {
   content: '';
   position: absolute;
@@ -372,7 +372,6 @@ strong { font-weight: 700; color: var(--text); }
   color: var(--lime);
 }
 
-/* reveal animation trigger */
 [data-reveal].revealed {
   opacity: 1 !important;
   transform: none !important;
@@ -554,7 +553,6 @@ strong { font-weight: 700; color: var(--text); }
   line-height: 1.75;
 }
 .card-footer { margin-top: auto; }
-/* lime glow on hover */
 .card-accent {
   position: absolute;
   bottom: -60px; right: -60px;
@@ -622,7 +620,6 @@ strong { font-weight: 700; color: var(--text); }
   transform: translateY(20px);
   transition: opacity .6s .1s ease, transform .6s .1s ease;
 }
-.band {}
 .band-label {
   display: block;
   font-size: .8rem;
@@ -746,13 +743,22 @@ strong { font-weight: 700; color: var(--text); }
 }
 .footer-top:hover { color: var(--lime); }
 
-/* ---- RESPONSIVE ---- */
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* --- Tablet landscape: 1024px --- */
 @media (max-width: 1024px) {
   .projects-grid { grid-template-columns: 1fr 1fr; }
-  .about-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .about-layout  { grid-template-columns: 1fr; gap: 2rem; }
   .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
 }
+
+/* --- Tablet portrait / Mobile large: 768px --- */
 @media (max-width: 768px) {
+
+  /* NAV — menu full-screen overlay */
   .nav-links {
     display: none;
     position: fixed;
@@ -765,26 +771,124 @@ strong { font-weight: 700; color: var(--text); }
     z-index: 99;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 1.25rem; }
-  .nav-toggle { display: flex; z-index: 101; }
-
-  .projects-grid { grid-template-columns: 1fr; }
-
-  .hero-counter {
-    gap: 2rem;
-    flex-wrap: wrap;
+  .nav-links a { font-size: 1.25rem; color: var(--text); }
+  .nav-toggle {
+    display: flex;
+    z-index: 101;
+    position: relative; /* assicura z-index attivo */
   }
 
+  /* PROJECTS — colonna singola */
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* HERO COUNTER — wrap su 2 colonne invece di 1 lunga riga */
+  .hero-counter {
+    gap: 2rem 3rem;
+    flex-wrap: wrap;
+    /* max-width ridotto per stare nel padding del container */
+    max-width: 100%;
+  }
+  /* Ogni counter occupa almeno il 40% così stanno 2 per riga */
+  .counter-item {
+    flex: 1 1 40%;
+  }
+
+  /* HERO NAME — rimpicciolisce su tablet */
   .hero-name { font-size: clamp(3rem, 14vw, 5rem); }
 
+  /* Spegni stroke su mobile piccolo per leggibilità */
+  .hero-name em {
+    -webkit-text-stroke: 1.5px var(--lime);
+  }
+
+  /* SCROLL HINT — nascondi su mobile per non interferire con layout */
+  .scroll-hint { display: none; }
+
+  /* CURSORE — ripristina nativo */
   body { cursor: auto; }
   .cursor-dot, .cursor-ring { display: none; }
   a, button { cursor: pointer; }
+
+  /* CONTACT — hover translateX non funziona bene su touch */
+  .contact-card:hover { transform: none; }
 }
+
+/* --- Mobile standard: 480px --- */
 @media (max-width: 480px) {
-  .hero { padding: 7rem 1.25rem 3rem; }
+  /* SPACING generale */
+  .hero      { padding: 6rem 1.25rem 3rem; }
   .container { padding: 0 1.25rem; }
-  .section { padding: 5rem 0; }
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { text-align: center; justify-content: center; }
+  .section   { padding: 5rem 0; }
+
+  /* HERO */
+  .hero-name { font-size: clamp(2.6rem, 13vw, 4rem); }
+  .hero-intro { font-size: 1rem; }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions .btn {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* HERO COUNTER — stack verticale su mobile stretto */
+  .hero-counter {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+  .counter-item { flex: none; }
+  .counter-num  { font-size: 2rem; }
+
+  /* PROJECT CARD — padding ridotto */
+  .project-card { padding: 1.75rem 1.5rem; }
+
+  /* SKILLS BANDS — full width */
+  .skills-bands { max-width: 100%; }
+
+  /* CONTACT */
+  .contact-inner { gap: 2rem; }
+  .contact-sub   { max-width: 100%; }
+  .contact-card  { padding: 1.25rem; gap: 1rem; }
+
+  /* ABOUT */
+  .about-layout  { gap: 1.5rem; }
+  .about-highlights { gap: 1rem; }
+
+  /* FOOTER */
+  .footer-inner {
+    flex-direction: column;
+    gap: .75rem;
+    text-align: center;
+  }
+
+  /* NAV INNER padding ridotto */
+  .nav-inner { padding: 0 1.25rem; }
+}
+
+/* --- Mobile piccolo: 360px (iPhone SE, Android entry-level) --- */
+@media (max-width: 360px) {
+  .hero      { padding: 5.5rem 1rem 2.5rem; }
+  .container { padding: 0 1rem; }
+  .nav-inner { padding: 0 1rem; }
+
+  /* Hero name senza stroke su schermi minuscoli */
+  .hero-name {
+    font-size: clamp(2.2rem, 12vw, 3rem);
+  }
+  .hero-name em {
+    -webkit-text-stroke: 1px var(--lime);
+  }
+
+  /* Role chips — riduci font */
+  .role-chip { font-size: .72rem; }
+
+  /* Btn full width già da 360 */
+  .hero-actions .btn { width: 100%; }
+
+  /* Card tag può andare a capo */
+  .card-top { flex-wrap: wrap; gap: .5rem; }
 }
